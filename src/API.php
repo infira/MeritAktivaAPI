@@ -1,6 +1,50 @@
 <?php
 
 namespace Infira\MeritAktiva;
+if (!function_exists('debug'))
+{
+	function debug()
+	{
+		$GLOBALS["debugIsActive"] = TRUE;
+		$args                     = func_get_args();
+		$html                     = "";
+		
+		if (count($args) == 1)
+		{
+			$html .= dump($args[0]);
+		}
+		else
+		{
+			$html .= dump($args);
+		}
+		$html = "<pre>$html</pre>";
+		echo($html);
+	}
+}
+if (!function_exists('dump'))
+{
+	function dump($variable, $echo = FALSE)
+	{
+		
+		if (is_array($variable) or is_object($variable))
+		{
+			$html = print_r($variable, TRUE);
+		}
+		else
+		{
+			ob_start();
+			var_dump($variable);
+			$html = ob_get_clean();
+		}
+		if ($echo == TRUE)
+		{
+			exit($html);
+		}
+		
+		return $html;
+	}
+}
+
 
 use Infira\MeritAktiva\APIResult AS APIResult;
 use Infira\MeritAktiva\SalesInvoice AS Invoice;
@@ -12,6 +56,7 @@ class API extends \Infira\MeritAktiva\General
 	private $lastRequestData = "";
 	private $lastRequestUrl  = "";
 	private $url             = "";
+	private $debug           = FALSE;
 	
 	public function __construct($apiID, $apiKey, $country = 'ee', $vatPercent = 20)
 	{
@@ -36,6 +81,12 @@ class API extends \Infira\MeritAktiva\General
 		define("MERIT_VAT_PERCENT", $vatPercent);
 	}
 	
+	public function setDebug(bool $bool)
+	{
+		$this->debug = $bool;
+	}
+	
+	
 	public function getLastRequestData()
 	{
 		return $this->lastRequestData;
@@ -53,7 +104,7 @@ class API extends \Infira\MeritAktiva\General
 		$json      = "";
 		if ($payload)
 		{
-			if (isset($_GET["debug"]))
+			if ($this->debug)
 			{
 				debug($payload);
 			}
@@ -76,7 +127,7 @@ class API extends \Infira\MeritAktiva\General
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
 		}
 		$curlResponse = curl_exec($curl);
-		if (isset($_GET["debug"]))
+		if ($this->debug)
 		{
 			debug('$curlResponse', $curlResponse);
 		}

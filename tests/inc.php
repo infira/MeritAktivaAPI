@@ -1,5 +1,4 @@
 <?php
-require_once 'function.php';
 spl_autoload_register(function ($className)
 {
 	$className = str_replace('Infira\MeritAktiva\\', '', $className);

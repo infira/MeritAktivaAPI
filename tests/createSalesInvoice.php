@@ -1,6 +1,7 @@
 <?php
 require_once 'inc.php';
-$Api      = new Infira\MeritAktiva\API($apiID, $apiKey, 'ee', 20);
+$Api = new Infira\MeritAktiva\API($apiID, $apiKey, 'ee', 20, TRUE);
+$Api->setDebug(TRUE);
 $Customer = new \Infira\MeritAktiva\Customer();
 /**
  * If you know customer GUID use code bel
