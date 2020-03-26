@@ -4,7 +4,7 @@ API reference is available from https://api.merit.ee/
 See ./tests for examples  
 Feel free to contribute
 
-##TODO
+## TODO
 * Inventory Movements
 * General Ledger Transactions
 * Accounts List
