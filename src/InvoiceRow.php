@@ -186,5 +186,3 @@ class InvoiceRow extends \Infira\MeritAktiva\General
 		$this->set("CostCenterCode", $code);
 	}
 }
-
-?>

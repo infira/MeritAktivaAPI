@@ -65,5 +65,3 @@ class Article extends \Infira\MeritAktiva\General
 		$this->set("DefLocationCode", $code);
 	}
 }
-
-?>

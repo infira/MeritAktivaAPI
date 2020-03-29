@@ -17,5 +17,3 @@ class Attachment extends \Infira\MeritAktiva\General
 		$this->set("FileContent", base64_encode(file_get_contents($filePath)));
 	}
 }
-
-?>

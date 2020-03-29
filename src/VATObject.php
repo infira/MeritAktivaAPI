@@ -22,5 +22,3 @@ class VATObject extends \Infira\MeritAktiva\General
 	}
 	
 }
-
-?>

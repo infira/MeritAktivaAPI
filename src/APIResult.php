@@ -25,5 +25,3 @@ class APIResult
 		return $this->res;
 	}
 }
-
-?>

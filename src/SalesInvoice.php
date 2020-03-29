@@ -33,5 +33,3 @@ class SalesInvoice extends \Infira\MeritAktiva\InvoiceGeneral
 		}
 	}
 }
-
-?>

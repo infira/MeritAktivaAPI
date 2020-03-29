@@ -41,5 +41,3 @@ class PurchaseInvoice extends \Infira\MeritAktiva\InvoiceGeneral
 		$this->set('Attachment', $Attachment);
 	}
 }
-
-?>

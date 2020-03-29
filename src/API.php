@@ -474,5 +474,3 @@ class API extends \Infira\MeritAktiva\General
 		return $this->getVendorsBy(["Name" => $name]);
 	}
 }
-
-?>

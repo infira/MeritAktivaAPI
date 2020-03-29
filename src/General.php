@@ -192,5 +192,3 @@ abstract class General
 		return $priceGross - $this->getTAX($priceGross, TRUE);
 	}
 }
-
-?>

@@ -89,5 +89,3 @@ class Vendor extends \Infira\MeritAktiva\General
 	}
 	
 }
-
-?>

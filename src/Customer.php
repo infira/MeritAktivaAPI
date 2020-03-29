@@ -89,5 +89,3 @@ class Customer extends \Infira\MeritAktiva\General
 	}
 	
 }
-
-?>

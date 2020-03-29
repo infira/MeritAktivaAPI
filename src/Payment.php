@@ -37,5 +37,3 @@ class Payment extends \Infira\MeritAktiva\InvoiceGeneral
 	}
 	
 }
-
-?>

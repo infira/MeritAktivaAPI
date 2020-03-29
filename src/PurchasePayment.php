@@ -29,5 +29,3 @@ class PurchasePayment extends \Infira\MeritAktiva\General
 	}
 	
 }
-
-?>

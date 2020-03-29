@@ -155,5 +155,3 @@ abstract class InvoiceGeneral extends \Infira\MeritAktiva\General
 		$this->set("Hcomment", $comment);
 	}
 }
-
-?>
