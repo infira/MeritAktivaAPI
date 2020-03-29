@@ -60,7 +60,7 @@ abstract class InvoiceGeneral extends \Infira\MeritAktiva\General
 		$rows[] = $Row;
 		$this->setRows($rows);
 		$taxID = $Row->getTaxID();
-		if (array_key_exists($taxID, $this->taxAmounts))
+		if (!array_key_exists($taxID, $this->taxAmounts))
 		{
 			$this->taxAmounts[$taxID] = 0;
 		}
