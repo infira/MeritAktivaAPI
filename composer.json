@@ -1,0 +1,21 @@
+{
+    "name"             : "madisx/meritaktivaapi",
+    "description"      : "PHP Api fror Merit Aktiva API",
+    "type"             : "library",
+    "autoload"         : {
+      "psr-4": {
+        "Infira\\MeritAktiva\\": "src/"
+      }
+    },
+    "minimum-stability": "stable",
+    "authors"          : [
+      {
+        "name" : "Gen Taliaru",
+        "email": "gen@infira.ee"
+      },
+      {
+          "name": "Madis Kapsi",
+          "email": "madis@scr.ee"
+      }
+    ]
+  }

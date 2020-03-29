@@ -120,7 +120,10 @@ class API extends \Infira\MeritAktiva\General
 		
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, ["Content-type: application/json"]);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, [
+			"Content-type: application/json",
+			"Content-Length: " . strlen($json),
+		]);
 		curl_setopt($curl, CURLOPT_POST, TRUE);
 		if ($json)
 		{
