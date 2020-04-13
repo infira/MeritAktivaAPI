@@ -117,13 +117,18 @@ class API extends \Infira\MeritAktiva\General
 		$url                   = sprintf('%s%s?ApiId=%s&timestamp=%s&signature=%s' . $urlParams, $this->url, $endPoint, $this->apiID, $timestamp, $signature);
 		$this->lastRequestUrl  = $url;
 		$this->lastRequestData = $payload;
+
+		$headers = [
+			"Content-type: application/json",
+		];
+
+		if (strlen($json)) {
+			$headers[] = "Content-Length: " . strlen($json);
+		}
 		
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, [
-			"Content-type: application/json",
-			"Content-Length: " . strlen($json),
-		]);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($curl, CURLOPT_POST, TRUE);
 		if ($json)
 		{
