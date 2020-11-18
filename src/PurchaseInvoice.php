@@ -11,7 +11,7 @@ class PurchaseInvoice extends \Infira\MeritAktiva\InvoiceGeneral
 		$this->setMandatoryField('TotalAmount');
 	}
 	
-	public function setVeondor(\Infira\MeritAktiva\Vendor $Vendor)
+	public function setVendor(\Infira\MeritAktiva\Vendor $Vendor)
 	{
 		$this->set('Vendor', $Vendor);
 	}
