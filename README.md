@@ -1,4 +1,4 @@
-# MeritAktivaAPI
+# Merit Aktiva API
 PHP Api fror Merit Aktiva API  
 API reference is available from https://api.merit.ee/    
 See ./tests for examples  
